@@ -1,0 +1,440 @@
+{
+  "intents": [
+    {
+      "intent": "Thanks",
+      "examples": [
+        {
+          "text": "thanks for the help"
+        },
+        {
+          "text": "Was of great help"
+        },
+        {
+          "text": "thanks"
+        },
+        {
+          "text": "was helpful"
+        },
+        {
+          "text": "thank you"
+        },
+        {
+          "text": "Thanks a ton"
+        },
+        {
+          "text": "very helpful"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "product_information",
+      "examples": [
+        {
+          "text": "wiring configuration?"
+        },
+        {
+          "text": "Accessory confirmation?"
+        },
+        {
+          "text": "Equipment configuration"
+        },
+        {
+          "text": "how to reboot"
+        },
+        {
+          "text": "What is smart recovery?"
+        },
+        {
+          "text": "Diagnostics"
+        },
+        {
+          "text": "Wi-fi radio"
+        },
+        {
+          "text": "How do i turn on the heater?"
+        },
+        {
+          "text": "How do i set the time?"
+        },
+        {
+          "text": "How to adjust temperature?"
+        },
+        {
+          "text": "Overview of the device"
+        },
+        {
+          "text": "Network"
+        },
+        {
+          "text": "What mode if on vacation?"
+        },
+        {
+          "text": "How to access the settings?"
+        },
+        {
+          "text": "Moved to new house"
+        },
+        {
+          "text": "Changing owner"
+        },
+        {
+          "text": "thresholds"
+        },
+        {
+          "text": "How do I access the settings"
+        },
+        {
+          "text": "Guided Setup process"
+        }
+      ]
+    },
+    {
+      "intent": "Goodbye",
+      "examples": [
+        {
+          "text": "Bye"
+        },
+        {
+          "text": "adieu"
+        },
+        {
+          "text": "Goodbye"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Greeting",
+      "examples": [
+        {
+          "text": "Hello agent"
+        },
+        {
+          "text": "Hey you"
+        },
+        {
+          "text": "You there"
+        },
+        {
+          "text": "Who is this?"
+        },
+        {
+          "text": "What's up?"
+        },
+        {
+          "text": "Help"
+        },
+        {
+          "text": "Help me"
+        },
+        {
+          "text": "Can you help"
+        },
+        {
+          "text": "Assist me"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hey"
+        },
+        {
+          "text": "yo"
+        },
+        {
+          "text": "Hola"
+        },
+        {
+          "text": "I had a question"
+        },
+        {
+          "text": "I am facing trouble"
+        },
+        {
+          "text": "I am facing difficulty"
+        },
+        {
+          "text": "can you help me"
+        },
+        {
+          "text": "need help"
+        },
+        {
+          "text": "Good morning"
+        },
+        {
+          "text": "Hi there"
+        },
+        {
+          "text": "Hey there"
+        },
+        {
+          "text": "Hey advisor"
+        },
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "how are you"
+        },
+        {
+          "text": "Hello I am looking for some help"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "Help",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Help",
+          "synonyms": [
+            "Help",
+            "support",
+            "need"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "webhooks": [
+    {
+      "url": "https://eu-gb.functions.cloud.ibm.com/api/v1/web/rikat137%40gmail.com_dev/default/disco-action.json",
+      "name": "main_webhook",
+      "headers": []
+    }
+  ],
+  "dialog_nodes": [
+    {
+      "type": "response_condition",
+      "parent": "Welcome",
+      "conditions": "anything_else",
+      "dialog_node": "response_2_1590237977828",
+      "previous_sibling": "response_10_1590237975624"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hey there. I am Ecobee3 ChatBot. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Welcome",
+      "dialog_node": "response_10_1590237975624"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Try rephrasing"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_8_1589837059252",
+      "conditions": "anything_else",
+      "dialog_node": "response_5_1589837095700",
+      "previous_sibling": "response_5_1589837092740"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$webhook_result_1"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1589837059252",
+      "conditions": "$webhook_result_1",
+      "dialog_node": "response_5_1589837092740"
+    },
+    {
+      "type": "standard",
+      "title": "Goodbye",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hope to see you again."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Goodbye",
+      "dialog_node": "node_4_1590434812528",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get you."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_4_1590245252192",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Greeting",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "How may i help you?"
+              },
+              {
+                "text": "Hey there! What do you want to know?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Greeting",
+      "dialog_node": "node_6_1590249431012",
+      "previous_sibling": "node_8_1589837059252"
+    },
+    {
+      "type": "standard",
+      "title": "Thanks",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Happy to Help!"
+              },
+              {
+                "text": "Most welcome!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Thanks",
+      "dialog_node": "node_4_1590245252192",
+      "previous_sibling": "node_6_1590249431012"
+    },
+    {
+      "type": "standard",
+      "title": "Product_details",
+      "actions": [
+        {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "input": "<?input.text?>"
+          },
+          "result_variable": "webhook_result_1"
+        }
+      ],
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#product_information",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_8_1589837059252",
+      "previous_sibling": "node_4_1590434812528"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "metadata": {
+        "callout": {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "": ""
+          },
+          "result_variable": "webhook_result_1"
+        },
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Basic",
+  "language": "en",
+  "description": "Basic functions like greets and replies to appreciation."
+}
