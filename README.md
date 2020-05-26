@@ -5,9 +5,9 @@ This project is based on an internship provided by SmartInternz (smartinternz.co
 
 # Project Overview
 
-A chatbot, customer helpdesk, is designed for Ecobee3. Ecobee3 is a smart thermostat falling under the category of smart home devices. The chatbot helps the user to gather information by raising query. This chatbot accesses an unstructured document (user manual) of Ecobee3, by smart understanding of the document and it replies to any query related to Ecobee3.
+A chatbot, customer helpdesk, is designed for Ecobee3. Ecobee3 is a smart thermostat falling under the category of smart home devices. The chatbot helps the user to gather information by raising query. This chatbot accesses an unstructured document (user manual) of Ecobee3, by smart understanding of the document it replies to any query related to Ecobee3.
 
-Here we try to configure Watson Discovery to provide answers related to queries based on User manual.
+Here, we try to configure Watson Discovery to provide answers related to queries based on User manual.
 Also, Watson Assistant is used to provide a proper dialogue flow for commmunication between a customer and a chatbot.
 When query will invlove product information then Watson Assistant will connect to Discovery Service using webhooks. 
 
