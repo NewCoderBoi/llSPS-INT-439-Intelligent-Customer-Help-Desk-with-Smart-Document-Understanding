@@ -22,3 +22,11 @@ The main purpose is to enhance the efficiency of the chatbot (Customer Helpdesk)
 https://node-red-nzfvk.eu-gb.mybluemix.net/ui/#!/0?socketid=eQO_mE3ruIxNDXuGAABV
 
 # Contents in Repository
+
+1. Cloud function action code
+2. Watson Assistant Skill
+3. Node-RED flow
+4. Code for function node in Node-RED flow
+5. Watson Discovery document (User manual)
+6. Project report
+
