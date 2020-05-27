@@ -25,10 +25,10 @@ https://node-red-nzfvk.eu-gb.mybluemix.net/ui/#!/0?socketid=eQO_mE3ruIxNDXuGAABV
 
 # Contents in Repository
 
-1. Cloud function action code (disco-action.js)
-2. Watson Assistant Skill (skill-basic.json)
+1. Cloud function action code (disco-action.txt)
+2. Watson Assistant Skill (skill-Basic.json)
 3. Node-RED flow (flows.json)
 4. Code for function node in Node-RED flow (input_parsing_function_node.txt and parsing_function_node.txt)
-5. Watson Discovery document (ecobee3_UserGuide)
+5. Watson Discovery document (ecobee3_UserGuide.pdf)
 6. Project report
 
